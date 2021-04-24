@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Provider } from 'next-auth/client'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { ThemeProvider } from '@material-ui/core/styles'
 
@@ -17,9 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Provider session={pageProps.session}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
     </>
   )
 }

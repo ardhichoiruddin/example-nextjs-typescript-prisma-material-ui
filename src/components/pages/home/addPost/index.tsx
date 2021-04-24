@@ -93,27 +93,27 @@ const AddPost: FC = () => {
             </Box>
 
             <Box>
-            <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="simple table">
-                    <TableHead>
-                    <TableRow>
-                        <TableCell>Id</TableCell>
-                        <TableCell align="right">Title</TableCell>
-                        <TableCell align="right">Excerpt</TableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {posts && posts.map((row, index) => (
-                        <TableRow key={index}>
-                            <TableCell component="th" scope="row">
-                                {row.id}
-                            </TableCell>
-                            <TableCell align="right">{row.title}</TableCell>
-                            <TableCell align="right">{row.excerpt}</TableCell>
+                <TableContainer component={Paper}>
+                    <Table className={classes.table} aria-label="simple table">
+                        <TableHead>
+                        <TableRow>
+                            <TableCell>Id</TableCell>
+                            <TableCell align="right">Title</TableCell>
+                            <TableCell align="right">Excerpt</TableCell>
                         </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
+                        </TableHead>
+                        <TableBody>
+                        {posts && posts.map((row, index) => (
+                            <TableRow key={index}>
+                                <TableCell component="th" scope="row">
+                                    {row.id}
+                                </TableCell>
+                                <TableCell align="right">{row.title}</TableCell>
+                                <TableCell align="right">{row.excerpt}</TableCell>
+                            </TableRow>
+                        ))}
+                        </TableBody>
+                    </Table>
                 </TableContainer>
             </Box>
         </div>
